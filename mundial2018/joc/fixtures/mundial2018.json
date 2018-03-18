@@ -1,0 +1,1114 @@
+[
+  {
+    "model": "joc.Grup",
+    "pk": 1,
+    "fields": {
+      "nom": "A"
+    }
+  },
+  {
+    "model": "joc.Grup",
+    "pk": 2,
+    "fields": {
+      "nom": "B"
+    }
+  },
+  {
+    "model": "joc.Grup",
+    "pk": 3,
+    "fields": {
+      "nom": "C"
+    }
+  },
+  {
+    "model": "joc.Grup",
+    "pk": 4,
+    "fields": {
+      "nom": "D"
+    }
+  },
+  {
+    "model": "joc.Grup",
+    "pk": 5,
+    "fields": {
+      "nom": "E"
+    }
+  },
+  {
+    "model": "joc.Grup",
+    "pk": 6,
+    "fields": {
+      "nom": "F"
+    }
+  },
+  {
+    "model": "joc.Grup",
+    "pk": 7,
+    "fields": {
+      "nom": "G"
+    }
+  },
+  {
+    "model": "joc.Grup",
+    "pk": 8,
+    "fields": {
+      "nom": "H"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 1,
+    "fields": {
+        "nom": "Russia",
+        "bandera": "rus.png",
+        "grup": "1"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 2,
+    "fields": {
+        "nom": "Aràbia Saudita",
+        "bandera": "ksa.png",
+        "grup": "1"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 3,
+    "fields": {
+        "nom": "Egipte",
+        "bandera": "egy.png",
+        "grup": "1"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 4,
+    "fields": {
+        "nom": "Uruguai",
+        "bandera": "uru.png",
+        "grup": "1"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 5,
+    "fields": {
+        "nom": "Portugal",
+        "bandera": "por.png",
+        "grup": "2"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 6,
+    "fields": {
+        "nom": "Espanya",
+        "bandera": "esp.png",
+        "grup": "2"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 7,
+    "fields": {
+        "nom": "Marroc",
+        "bandera": "mar.png",
+        "grup": "2"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 8,
+    "fields": {
+        "nom": "Iran",
+        "bandera": "irn.png",
+        "grup": "2"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 9,
+    "fields": {
+        "nom": "França",
+        "bandera": "fra.png",
+        "grup": "3"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 10,
+    "fields": {
+        "nom": "Austràlia",
+        "bandera": "aus.png",
+        "grup": "3"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 11,
+    "fields": {
+        "nom": "Perú",
+        "bandera": "per.png",
+        "grup": "3"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 12,
+    "fields": {
+        "nom": "Dinamarca",
+        "bandera": "den.png",
+        "grup": "3"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 13,
+    "fields": {
+        "nom": "Argentina",
+        "bandera": "arg.png",
+        "grup": "4"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 14,
+    "fields": {
+        "nom": "Islàndia",
+        "bandera": "isl.png",
+        "grup": "4"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 15,
+    "fields": {
+        "nom": "Croàcia",
+        "bandera": "cro.png",
+        "grup": "4"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 16,
+    "fields": {
+        "nom": "Nigèria",
+        "bandera": "nga.png",
+        "grup": "4"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 17,
+    "fields": {
+        "nom": "Brasil",
+        "bandera": "bra.png",
+        "grup": "5"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 18,
+    "fields": {
+        "nom": "Suïssa",
+        "bandera": "sui.png",
+        "grup": "5"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 19,
+    "fields": {
+        "nom": "Costa Rica",
+        "bandera": "crc.png",
+        "grup": "5"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 20,
+    "fields": {
+        "nom": "Sèrbia",
+        "bandera": "srb.png",
+        "grup": "5"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 21,
+    "fields": {
+        "nom": "Alemanya",
+        "bandera": "ger.png",
+        "grup": "6"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 22,
+    "fields": {
+        "nom": "Mèxic",
+        "bandera": "mex.png",
+        "grup": "6"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 23,
+    "fields": {
+        "nom": "Suècia",
+        "bandera": "swe.png",
+        "grup": "6"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 24,
+    "fields": {
+        "nom": "Corea del Sud",
+        "bandera": "kor.png",
+        "grup": "6"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 25,
+    "fields": {
+        "nom": "Bèlgica",
+        "bandera": "bel.png",
+        "grup": "7"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 26,
+    "fields": {
+        "nom": "Panamà",
+        "bandera": "pan.png",
+        "grup": "7"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 27,
+    "fields": {
+        "nom": "Tuníssia",
+        "bandera": "tun.png",
+        "grup": "7"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 28,
+    "fields": {
+        "nom": "Anglaterra",
+        "bandera": "eng.png",
+        "grup": "7"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 29,
+    "fields": {
+        "nom": "Polònia",
+        "bandera": "pol.png",
+        "grup": "8"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 30,
+    "fields": {
+        "nom": "Senegal",
+        "bandera": "sen.png",
+        "grup": "8"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 31,
+    "fields": {
+        "nom": "Colòmbia",
+        "bandera": "col.png",
+        "grup": "8"
+    }
+  },
+  {
+    "model": "joc.Equip",
+    "pk": 32,
+    "fields": {
+        "nom": "Japó",
+        "bandera": "jpn.png",
+        "grup": "8"
+    }
+  },
+  {
+    "model": "joc.Estadi",
+    "pk": 1,
+    "fields": {
+      "nom": "Ekaterinburg Arena",
+      "ciutat": "Ekaterinburg"
+    }
+  },
+  {
+    "model": "joc.Estadi",
+    "pk": 2,
+    "fields": {
+      "nom": "Kaliningrad Stadium",
+      "ciutat": "Kaliningrad"
+    }
+  },
+  {
+    "model": "joc.Estadi",
+    "pk": 3,
+    "fields": {
+      "nom": "Kazan Arena",
+      "ciutat": "Kazan"
+    }
+  },
+  {
+    "model": "joc.Estadi",
+    "pk": 4,
+    "fields": {
+      "nom": "Luzhniki Stadium",
+      "ciutat": "Moscou"
+    }
+  },
+  {
+    "model": "joc.Estadi",
+    "pk": 5,
+    "fields": {
+      "nom": "Spartak Stadium",
+      "ciutat": "Moscou"
+    }
+  },
+  {
+    "model": "joc.Estadi",
+    "pk": 6,
+    "fields": {
+      "nom": "Nizhny Novgorod Stadium",
+      "ciutat": "Nizhny Novgorod"
+    }
+  },
+  {
+    "model": "joc.Estadi",
+    "pk": 7,
+    "fields": {
+      "nom": "Rostov Arena",
+      "ciutat": "Rostov-on-Don"
+    }
+  },
+  {
+    "model": "joc.Estadi",
+    "pk": 8,
+    "fields": {
+      "nom": "Saint Petersburg Stadium",
+      "ciutat": "Sant Petersburg"
+    }
+  },
+  {
+    "model": "joc.Estadi",
+    "pk": 9,
+    "fields": {
+      "nom": "Samara Arena",
+      "ciutat": "Samara"
+    }
+  },
+  {
+    "model": "joc.Estadi",
+    "pk": 10,
+    "fields": {
+      "nom": "Mordovia Arena",
+      "ciutat": "Saransk"
+    }
+  },
+  {
+    "model": "joc.Estadi",
+    "pk": 11,
+    "fields": {
+      "nom": "Fisht Stadium",
+      "ciutat": "Sotxi"
+    }
+  },
+  {
+    "model": "joc.Estadi",
+    "pk": 12,
+    "fields": {
+      "nom": "Volgograd Arena",
+      "ciutat": "Volgograd"
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 1,
+    "fields": {
+      "equip1": 1,
+      "equip2": 2,
+      "diaihora": "2018-06-14T18:00:00+03:00",
+      "estadi": 3,
+      "grup": 1
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 2,
+    "fields": {
+      "equip1": 3,
+      "equip2": 4,
+      "diaihora": "2018-06-15T17:00:00+05:00",
+      "estadi": 1,
+      "grup": 1
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 3,
+    "fields": {
+      "equip1": 5,
+      "equip2": 6,
+      "diaihora": "2018-06-15T21:00:00+03:00",
+      "estadi": 11,
+      "grup": 2
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 4,
+    "fields": {
+      "equip1": 7,
+      "equip2": 8,
+      "diaihora": "2018-06-15T18:00:00+03:00",
+      "estadi": 8,
+      "grup": 2
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 5,
+    "fields": {
+      "equip1": 9,
+      "equip2": 10,
+      "diaihora": "2018-06-16T13:00:00+03:00",
+      "estadi": 3,
+      "grup": 3
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 6,
+    "fields": {
+      "equip1": 11,
+      "equip2": 12,
+      "diaihora": "2018-06-16T19:00:00+03:00",
+      "estadi": 10,
+      "grup": 3
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 7,
+    "fields": {
+      "equip1": 13,
+      "equip2": 14,
+      "diaihora": "2018-06-16T16:00:00+03:00",
+      "estadi": 5,
+      "grup": 4
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 8,
+    "fields": {
+      "equip1": 15,
+      "equip2": 16,
+      "diaihora": "2018-06-16T21:00:00+02:00",
+      "estadi": 2,
+      "grup": 4
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 9,
+    "fields": {
+      "equip1": 17,
+      "equip2": 18,
+      "diaihora": "2018-06-17T21:00:00+03:00",
+      "estadi": 7,
+      "grup": 5
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 10,
+    "fields": {
+      "equip1": 19,
+      "equip2": 20,
+      "diaihora": "2018-06-17T16:00:00+04:00",
+      "estadi": 9,
+      "grup": 5
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 11,
+    "fields": {
+      "equip1": 21,
+      "equip2": 22,
+      "diaihora": "2018-06-17T18:00:00+03:00",
+      "estadi": 4,
+      "grup": 6
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 12,
+    "fields": {
+      "equip1": 23,
+      "equip2": 24,
+      "diaihora": "2018-06-18T15:00:00+03:00",
+      "estadi": 6,
+      "grup": 6
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 13,
+    "fields": {
+      "equip1": 25,
+      "equip2": 26,
+      "diaihora": "2018-06-18T18:00:00+03:00",
+      "estadi": 11,
+      "grup": 7
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 14,
+    "fields": {
+      "equip1": 27,
+      "equip2": 28,
+      "diaihora": "2018-06-18T21:00:00+03:00",
+      "estadi": 12,
+      "grup": 7
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 15,
+    "fields": {
+      "equip1": 29,
+      "equip2": 30,
+      "diaihora": "2018-06-19T18:00:00+03:00",
+      "estadi": 5,
+      "grup": 8
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 16,
+    "fields": {
+      "equip1": 31,
+      "equip2": 32,
+      "diaihora": "2018-06-19T15:00:00+03:00",
+      "estadi": 10,
+      "grup": 8
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 17,
+    "fields": {
+      "equip1": 1,
+      "equip2": 3,
+      "diaihora": "2018-06-19T21:00:00+03:00",
+      "estadi": 8,
+      "grup": 1
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 18,
+    "fields": {
+      "equip1": 4,
+      "equip2": 2,
+      "diaihora": "2018-06-20T18:00:00+03:00",
+      "estadi": 7,
+      "grup": 1
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 19,
+    "fields": {
+      "equip1": 5,
+      "equip2": 7,
+      "diaihora": "2018-06-20T15:00:00+03:00",
+      "estadi": 4,
+      "grup": 2
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 20,
+    "fields": {
+      "equip1": 8,
+      "equip2": 6,
+      "diaihora": "2018-06-20T21:00:00+03:00",
+      "estadi": 3,
+      "grup": 2
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 21,
+    "fields": {
+      "equip1": 9,
+      "equip2": 11,
+      "diaihora": "2018-06-21T20:00:00+05:00",
+      "estadi": 1,
+      "grup": 3
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 22,
+    "fields": {
+      "equip1": 12,
+      "equip2": 10,
+      "diaihora": "2018-06-21T16:00:00+04:00",
+      "estadi": 9,
+      "grup": 3
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 23,
+    "fields": {
+      "equip1": 13,
+      "equip2": 15,
+      "diaihora": "2018-06-21T21:00:00+03:00",
+      "estadi": 6,
+      "grup": 4
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 24,
+    "fields": {
+      "equip1": 16,
+      "equip2": 14,
+      "diaihora": "2018-06-22T18:00:00+03:00",
+      "estadi": 12,
+      "grup": 4
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 25,
+    "fields": {
+      "equip1": 17,
+      "equip2": 19,
+      "diaihora": "2018-06-22T15:00:00+03:00",
+      "estadi": 8,
+      "grup": 5
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 26,
+    "fields": {
+      "equip1": 20,
+      "equip2": 18,
+      "diaihora": "2018-06-22T20:00:00+02:00",
+      "estadi": 2,
+      "grup": 5
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 27,
+    "fields": {
+      "equip1": 21,
+      "equip2": 23,
+      "diaihora": "2018-06-23T21:00:00+03:00",
+      "estadi": 11,
+      "grup": 6
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 28,
+    "fields": {
+      "equip1": 24,
+      "equip2": 22,
+      "diaihora": "2018-06-23T18:00:00+03:00",
+      "estadi": 7,
+      "grup": 6
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 29,
+    "fields": {
+      "equip1": 25,
+      "equip2": 27,
+      "diaihora": "2018-06-23T15:00:00+03:00",
+      "estadi": 5,
+      "grup": 7
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 30,
+    "fields": {
+      "equip1": 28,
+      "equip2": 26,
+      "diaihora": "2018-06-24T15:00:00+03:00",
+      "estadi": 6,
+      "grup": 7
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 31,
+    "fields": {
+      "equip1": 29,
+      "equip2": 31,
+      "diaihora": "2018-06-24T21:00:00+03:00",
+      "estadi": 3,
+      "grup": 8
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 32,
+    "fields": {
+      "equip1": 32,
+      "equip2": 30,
+      "diaihora": "2018-06-24T20:00:00+05:00",
+      "estadi": 1,
+      "grup": 8
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 33,
+    "fields": {
+      "equip1": 4,
+      "equip2": 1,
+      "diaihora": "2018-06-25T18:00:00+04:00",
+      "estadi": 9,
+      "grup": 1
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 34,
+    "fields": {
+      "equip1": 2,
+      "equip2": 3,
+      "diaihora": "2018-06-25T17:00:00+03:00",
+      "estadi": 12,
+      "grup": 1
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 35,
+    "fields": {
+      "equip1": 8,
+      "equip2": 5,
+      "diaihora": "2018-06-25T21:00:00+03:00",
+      "estadi": 10,
+      "grup": 2
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 36,
+    "fields": {
+      "equip1": 6,
+      "equip2": 7,
+      "diaihora": "2018-06-25T20:00:00+02:00",
+      "estadi": 2,
+      "grup": 2
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 37,
+    "fields": {
+      "equip1": 12,
+      "equip2": 9,
+      "diaihora": "2018-06-26T17:00:00+03:00",
+      "estadi": 4,
+      "grup": 3
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 38,
+    "fields": {
+      "equip1": 10,
+      "equip2": 11,
+      "diaihora": "2018-06-26T17:00:00+03:00",
+      "estadi": 11,
+      "grup": 3
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 39,
+    "fields": {
+      "equip1": 16,
+      "equip2": 13,
+      "diaihora": "2018-06-26T21:00:00+03:00",
+      "estadi": 8,
+      "grup": 4
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 40,
+    "fields": {
+      "equip1": 14,
+      "equip2": 15,
+      "diaihora": "2018-06-26T21:00:00+03:00",
+      "estadi": 7,
+      "grup": 4
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 41,
+    "fields": {
+      "equip1": 20,
+      "equip2": 17,
+      "diaihora": "2018-06-27T21:00:00+03:00",
+      "estadi": 5,
+      "grup": 5
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 42,
+    "fields": {
+      "equip1": 18,
+      "equip2": 19,
+      "diaihora": "2018-06-27T21:00:00+03:00",
+      "estadi": 6,
+      "grup": 5
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 43,
+    "fields": {
+      "equip1": 24,
+      "equip2": 21,
+      "diaihora": "2018-06-27T17:00:00+03:00",
+      "estadi": 3,
+      "grup": 6
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 44,
+    "fields": {
+      "equip1": 22,
+      "equip2": 24,
+      "diaihora": "2018-06-27T19:00:00+05:00",
+      "estadi": 1,
+      "grup": 6
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 45,
+    "fields": {
+      "equip1": 28,
+      "equip2": 25,
+      "diaihora": "2018-06-28T20:00:00+02:00",
+      "estadi": 2,
+      "grup": 7
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 46,
+    "fields": {
+      "equip1": 26,
+      "equip2": 27,
+      "diaihora": "2018-06-28T21:00:00+03:00",
+      "estadi": 10,
+      "grup": 7
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 47,
+    "fields": {
+      "equip1": 32,
+      "equip2": 29,
+      "diaihora": "2018-06-28T17:00:00+03:00",
+      "estadi": 12,
+      "grup": 8
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 48,
+    "fields": {
+      "equip1": 30,
+      "equip2": 31,
+      "diaihora": "2018-06-28T18:00:00+04:00",
+      "estadi": 9,
+      "grup": 8
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 49,
+    "fields": {
+      "diaihora": "2018-06-30T21:00:00+03:00",
+      "estadi": 11,
+      "grup": 9
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 50,
+    "fields": {
+      "diaihora": "2018-06-30T17:00:00+03:00",
+      "estadi": 3,
+      "grup": 9
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 51,
+    "fields": {
+      "diaihora": "2018-05-01T17:00:00+03:00",
+      "estadi": 4,
+      "grup": 9
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 52,
+    "fields": {
+      "diaihora": "2018-07-01T21:00:00+03:00",
+      "estadi": 6,
+      "grup": 9
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 53,
+    "fields": {
+      "diaihora": "2018-07-02T18:00:00+04:00",
+      "estadi": 9,
+      "grup": 9
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 54,
+    "fields": {
+      "diaihora": "2018-07-02T21:00:00+03:00",
+      "estadi": 7,
+      "grup": 9
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 55,
+    "fields": {
+      "diaihora": "2018-07-03T17:00:00+03:00",
+      "estadi": 8,
+      "grup": 9
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 56,
+    "fields": {
+      "diaihora": "2018-07-03T21:00:00+03:00",
+      "estadi": 5,
+      "grup": 9
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 57,
+    "fields": {
+      "diaihora": "2018-07-06T17:00:00+03:00",
+      "estadi": 6,
+      "grup": 10
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 58,
+    "fields": {
+      "diaihora": "2018-07-06T21:00:00+03:00",
+      "estadi": 3,
+      "grup": 10
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 59,
+    "fields": {
+      "diaihora": "2018-07-07T21:00:00+03:00",
+      "estadi": 11,
+      "grup": 10
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 60,
+    "fields": {
+      "diaihora": "2018-07-07T18:00:00+04:00",
+      "estadi": 9,
+      "grup": 10
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 61,
+    "fields": {
+      "diaihora": "2018-07-10T21:00:00+03:00",
+      "estadi": 8,
+      "grup": 11
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 62,
+    "fields": {
+      "diaihora": "2018-07-11T21:00:00+03:00",
+      "estadi": 4,
+      "grup": 11
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 63,
+    "fields": {
+      "diaihora": "2018-07-14T17:00:00+03:00",
+      "estadi": 8,
+      "grup": 12
+    }
+  },
+  {
+    "model": "joc.Partit",
+    "pk": 64,
+    "fields": {
+      "diaihora": "2018-07-15T18:00:00+03:00",
+      "estadi": 4,
+      "grup": 13
+    }
+  }
+]

@@ -1,0 +1,63 @@
+{% extends "joc/base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "css/estil_grup.css" %}">
+{% if not equips_classificacio %}
+<link rel="stylesheet" type="text/css" href="{% static "css/estil_eliminatoria.css" %}">
+{% endif %}
+{% endblock stylesheets %}
+
+{% block title %}Entrada dels resultats - {{ text_grup}}{% endblock %}
+
+{% block navegacio %}
+&nbsp;&nbsp;&gt;&nbsp;&nbsp;
+<a href="{% url 'joc:pronostic' %}">Entrada de Resultats</a>
+&nbsp;&nbsp;&gt;&nbsp;&nbsp;
+<a href="{% url 'joc:pronostic' %}?grup={{ grup }}">{{ text_grup }}</a>
+{% endblock navegacio %}
+
+{% block content %}
+
+<h4>
+El teu pronòstic conté un empat entre els 4 millors tercers la fase de grups!
+</h4>
+<div id="avis">
+Si canvies algun resultat és possible que desfacis aquest empat.<br>
+Si no, pots continuar i la màquina escollirà aleatòriament els 4 tercers classificats que passen a vuitens de final.
+</div>
+<br><br>
+<div id="classificacio_tercers">
+<table width="450" align="center">
+<tr><td colspan="6" class="dia">CLASSIFICACIÓ TERCERS CLASSIFICATS:</td></tr>
+<tr>
+<td class="negreta_bandera">Grup</td>
+<td class="negreta_bandera">Bandera</td>
+<td class="negreta">Selecció</td>
+<td class="negreta">Punts</td>
+<td class="negreta">Diferència</td>
+<td class="negreta">Gols</td>
+</tr>
+{% for tercer in tercers %}
+<tr>
+<td><a href="{% url 'joc:pronostic' %}?grup={{ tercer.equip.grup.nom }}">{{ tercer.equip.grup.nom }}</a></td>
+<td class="class_bandera"><img name="ban{{ forloop.counter0 }}" src="{% with 'banderes/'|add:tercer.equip.bandera as bandera %}{% static bandera %}{% endwith %}" height="{{ height_banderes }}" width="{{ width_banderes }}" border="{{ border_banderes }}"></td>
+<td class="classif"><a href="{% url 'joc:pronostic' %}?grup={{ tercer.equip.grup.nom }}">{{ tercer.equip.nom }}</a></td>
+<td align="center" class="classif">{{ tercer.punts }}</td>
+<td align="center" class="classif">{{ tercer.diferencia }}</td>
+<td align="center" class="classif">{{ tercer.favor }}</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+
+<div class="boto_next">
+<form action="{% url 'joc:pronostic' %}" method="get">
+<input name="seguent" type="submit" class="boto_index" value="Continua">
+<input name="grup" type="hidden" value="G">
+</form>
+</div>
+
+{% endblock %}

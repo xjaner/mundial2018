@@ -1,0 +1,68 @@
+{% extends "joc/base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "css/estil_pronostic.css" %}">
+{% endblock stylesheets %}
+{% block scripts %}
+<script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
+{% endblock scripts %}
+
+{% block title %}Consulta el pronòstic{% endblock %}
+
+{% block navegacio %}
+&nbsp;&nbsp;&gt;&nbsp;&nbsp;
+<a href="{% url 'joc:consulta' %}">Consulta el pronòstic</a>
+{% endblock navegacio %}
+
+{% block content %}
+<p>Pronòstic de l'usuari {{ pronostics.0.jugador.usuari.username }}.</p>
+<div id="llistat">
+<table width="100%">
+<tr>
+<td class="titol_llistat">Grup</td>
+<td class="titol_llistat">Dia</td>
+<td class="titol_llistat">Estadi</td>
+<td class="titol_llistat">Equip 1</td>
+<td class="titol_llistat">Gols 1</td>
+<td class="titol_llistat">Equip 2</td>
+<td class="titol_llistat">Gols 2</td>
+</tr>
+{% for pronostic in pronostics %}
+<tr class="linia_usuaris">
+<td align="center">{{ pronostic.partit.grup.nom }}</td>
+<td>{{ pronostic.partit.diaihora }}</td>
+<td>{{ pronostic.partit.estadi }}</td>
+{% if pronostic.empat == 1 %}
+<td class="linia_bona">
+{% else %}
+<td>
+{% endif %}
+{{ pronostic.equip1.nom }}
+</td>
+{% if pronostic.empat == 1 %}
+<td class="linia_bona" align="center">
+{% else %}
+<td align="center">
+{% endif %}
+{{ pronostic.gols1 }}</td>
+{% if pronostic.empat == 2 %}
+<td class="linia_bona">
+{% else %}
+<td>
+{% endif %}
+{{ pronostic.equip2.nom }}
+</td>
+{% if pronostic.empat == 2 %}
+<td class="linia_bona" align="center">
+{% else %}
+<td align="center">
+{% endif %}
+{{ pronostic.gols2 }}</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+{% endblock %}

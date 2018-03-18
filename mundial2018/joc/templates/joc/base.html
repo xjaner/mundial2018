@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+    {% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+    {% endblock stylesheets %}
+    {% block scripts %}
+    <script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
+    {% endblock scripts %}
+    <title>El Joc de l'Eurocopa 2016 - {% block title %}{% endblock title %}</title>
+    </head>
+
+    <body>
+    <div id="contenidor">
+    <div id="cap"><img src="{% static "img/cap.png" %}"></div>
+    <div id="contingut">
+
+    <div id="barres">
+    <div id="barra1">
+    <a href="{% url 'joc:index' %}">Inici</a>
+    {% block navegacio %}
+    {% endblock navegacio %}
+    </div>
+
+    <div id="barra2">
+    {% if request.user %}
+    <strong>
+    {{ request.user.username }}
+    </strong>
+    <a href="/registration/logout">Desconnecta</a>
+    {% else %}
+    &nbsp;
+    {% endif %}
+    </div>
+    </div>
+
+    <div id="content">
+    {% block content %}{% endblock content %}
+    </div>
+    </div>
+    <div id="cul">2006-2016 - Pàgina creada per Xavier Janer. Sou lliures per fer-ne el que vulgueu.</div>
+    </div>
+    </body>
+</html>

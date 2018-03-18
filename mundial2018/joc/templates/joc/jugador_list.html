@@ -1,0 +1,40 @@
+{% extends "joc/base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "css/estil_usuaris.css" %}">
+{% endblock stylesheets %}
+{% block scripts %}
+<script src="{% static "js/funcions.js" %}"></script>
+<script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
+{% endblock scripts %}
+
+{% block title %}Llistat d'usuaris{% endblock %}
+
+{% block navegacio %}
+&nbsp;&nbsp;&gt;&nbsp;&nbsp;
+<a href="{% url 'joc:consulta' %}">Llistat d'usuaris</a>
+{% endblock navegacio %}
+
+{% block content %}
+{% if jugador_list %}
+<div id="llistat">
+<table width="100%">
+<tr><td class="titol_llistat">Núm - Pagat</td><td class="titol_llistat">Nom d'usuari</td><td class="titol_llistat">Nom real</td></tr>
+{% for jugador in jugador_list %}
+{% if request.user == jugador.usuari %}
+<tr class="linia_bona">
+{% else %}
+<tr class="linia_usuaris">
+{% endif %}
+<td>{{ forloop.counter0|add:1 }} - <img width="12" height="12" src="{% if jugador.pagat %}{% static "img/tick.png" %}{% else %}{% static "img/cross.png" %}{% endif %}"></td>
+<td><a href="{% url 'joc:consulta' %}?usuari={{ jugador.id }}">{{ jugador.usuari.username }}</a></td>
+<td>{{ jugador.usuari.first_name }} {{ jugador.usuari.last_name }}</a></td>
+</tr>
+{% endfor %}
+</table>
+</div>
+{% endif %}
+{% endblock %}
