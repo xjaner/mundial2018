@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 
 class Jugador(models.Model):
-    usuari = models.OneToOneField(User)
+    usuari = models.OneToOneField(User, on_delete=models.CASCADE)
     pagat = models.BooleanField(default=False)
     posicio = models.SmallIntegerField()
     posicio_anterior = models.SmallIntegerField()
@@ -27,15 +27,15 @@ class Grup(models.Model):
 class Equip(models.Model):
     nom = models.CharField(max_length=128)
     bandera = models.CharField(max_length=128)
-    grup = models.ForeignKey('Grup')
+    grup = models.ForeignKey(Grup, on_delete=models.CASCADE)
 
     def __unicode__(self):
         return self.nom
 
 
 class PronosticEquipGrup(models.Model):
-    jugador = models.ForeignKey(Jugador)
-    equip = models.ForeignKey(Equip)
+    jugador = models.ForeignKey(Jugador, on_delete=models.CASCADE)
+    equip = models.ForeignKey(Equip, on_delete=models.CASCADE)
     posicio = models.PositiveSmallIntegerField(default=0)
     punts = models.PositiveSmallIntegerField(default=0)
     diferencia = models.SmallIntegerField(default=0)
@@ -48,11 +48,11 @@ class Estadi(models.Model):
 
 
 class Partit(models.Model):
-    equip1 = models.ForeignKey(Equip, related_name='equip1', null=True)
-    equip2 = models.ForeignKey(Equip, related_name='equip2', null=True)
+    equip1 = models.ForeignKey(Equip, related_name='equip1', null=True, on_delete=models.CASCADE)
+    equip2 = models.ForeignKey(Equip, related_name='equip2', null=True, on_delete=models.CASCADE)
     diaihora = models.DateTimeField()
-    estadi = models.ForeignKey(Estadi)
-    grup = models.ForeignKey(Grup)
+    estadi = models.ForeignKey(Estadi, on_delete=models.CASCADE)
+    grup = models.ForeignKey(Grup, on_delete=models.CASCADE)
     gols1 = models.SmallIntegerField(default=-1)
     gols2 = models.SmallIntegerField(default=-1)
     empat = models.PositiveSmallIntegerField(null=True, blank=True, default=None)
@@ -101,12 +101,14 @@ class Partit(models.Model):
 
 
 class PronosticPartit(models.Model):
-    jugador = models.ForeignKey(Jugador)
-    partit = models.ForeignKey(Partit)
+    jugador = models.ForeignKey(Jugador, on_delete=models.CASCADE)
+    partit = models.ForeignKey(Partit, on_delete=models.CASCADE)
     gols1 = models.SmallIntegerField(default=-1)
     gols2 = models.SmallIntegerField(default=-1)
-    equip1 = models.ForeignKey(Equip, related_name='equip1_pronostic', null=True)
-    equip2 = models.ForeignKey(Equip, related_name='equip2_pronostic', null=True)
+    equip1 = models.ForeignKey(
+        Equip, related_name='equip1_pronostic', null=True, on_delete=models.CASCADE)
+    equip2 = models.ForeignKey(
+        Equip, related_name='equip2_pronostic', null=True, on_delete=models.CASCADE)
     empat = models.PositiveSmallIntegerField(null=True)
 
     def signe(self):

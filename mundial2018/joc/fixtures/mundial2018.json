@@ -56,6 +56,41 @@
     }
   },
   {
+    "model": "joc.Grup",
+    "pk": 9,
+    "fields": {
+      "nom": "I"
+    }
+  },
+  {
+    "model": "joc.Grup",
+    "pk": 10,
+    "fields": {
+      "nom": "J"
+    }
+  },
+  {
+    "model": "joc.Grup",
+    "pk": 11,
+    "fields": {
+      "nom": "K"
+    }
+  },
+  {
+    "model": "joc.Grup",
+    "pk": 12,
+    "fields": {
+      "nom": "L"
+    }
+  },
+  {
+    "model": "joc.Grup",
+    "pk": 13,
+    "fields": {
+      "nom": "M"
+    }
+  },
+  {
     "model": "joc.Equip",
     "pk": 1,
     "fields": {
