@@ -24,9 +24,9 @@
     </div>
 
     <div id="barra2">
-    {% if request.user %}
+    {% if user.is_authenticated %}
     <strong>
-    {{ request.user.username }}
+    {{ user.username }}
     </strong>
     <a href="/registration/logout">Desconnecta</a>
     {% else %}
