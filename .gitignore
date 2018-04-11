@@ -1,0 +1,11 @@
+*.py[cod]
+*.sw[a-z]
+.mr.developer.cfg
+.project
+.pydevproject
+.ropeproject
+pip-log.txt
+.coverage
+.tox
+nosetests.xml
+tmp

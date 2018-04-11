@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:9.6
+    expose:
+      - 5432
+    volumes:
+      - /Users/xjaner/dev/data/pg_data:/var/lib/postgresql/data
+      - /Users/xjaner/dev/data/pg_backups:/pg_backups
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+  web:
+    build: .
+    volumes:
+      - /Users/xjaner/dev/mundial2018/mundial2018:/opt/mundial2018
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    command: uwsgi --ini /opt/mundial2018/uwsgi.ini
+
+volumes:
+  pg_data: {}
+  pg_backups: {}
