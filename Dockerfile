@@ -10,6 +10,7 @@ ENV DJANGO_ENV=dev
 ENV DOCKER_CONTAINER=1
 
 EXPOSE 8000
+EXPOSE 8001
 
 # Will also be done in docker-compose
 COPY ./mundial2018 /opt/mundial2018

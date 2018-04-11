@@ -103,7 +103,7 @@ def pronostic(request):
         PronosticPartit.objects.get_or_create(jugador=jugador, partit=partit, **items)
 
     grup_form = GrupForm(queryset=PronosticPartit.objects.filter(
-        jugador=jugador, partit__grup__nom=grup))
+        jugador=jugador, partit__grup=grup))
 
     equips_classificacio = []
     template = 'grup.html'
@@ -112,7 +112,7 @@ def pronostic(request):
         # Creem els PronosticEquipGrup que faltin
         equips_classificacio = []
         deshabilita_submit = True
-        for equip in Equip.objects.filter(grup__nom=grup):
+        for equip in Equip.objects.filter(grup=grup):
             equip_classificacio, _ = PronosticEquipGrup.objects.get_or_create(jugador=jugador,
                                                                               equip=equip)
             equips_classificacio.append(equip_classificacio)
