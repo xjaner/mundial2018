@@ -1,0 +1,20 @@
+{% extends "joc/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans 'Welcome!' %}{% endblock %}
+
+{% block content %}
+
+{% block nav %}
+<ul class="nav">
+    <li>{% block nav-pronostic %}<a class="indexButton" href="{% url 'joc:pronostic' %}">{% trans "Fes el pronòstic" %}</a>{% endblock %}</li>
+    <li>{% block nav-consulta %}<a class="indexButton" href="{% url 'joc:consulta' %}">{% trans "Consulta el teu pronòstic" %}</a>{% endblock %}</li>
+    {% if pronostic_acabat %}
+    <li>{% block nav-consulta-grups %}<a class="indexButton" href="{% url 'joc:consulta_grups' %}">{% trans "Consulta els teus grups " %}</a>{% endblock %}</li>
+    {% endif %}
+    <li>{% block nav-usuaris %}<a class="indexButton" href="{% url 'joc:usuaris' %}">{% trans "Llistat d'usuaris" %}</a>{% endblock %}</li>
+</ul>
+{% endblock %}
+
+{% endblock %}
+
