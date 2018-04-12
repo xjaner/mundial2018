@@ -109,7 +109,7 @@ class PronosticPartit(models.Model):
         Equip, related_name='equip1_pronostic', null=True, on_delete=models.CASCADE)
     equip2 = models.ForeignKey(
         Equip, related_name='equip2_pronostic', null=True, on_delete=models.CASCADE)
-    empat = models.PositiveSmallIntegerField(null=True)
+    empat = models.PositiveSmallIntegerField(null=True, blank=True, default=None)
 
     def signe(self):
         if self.gols1 > self.gols2:
