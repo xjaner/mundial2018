@@ -1,4 +1,6 @@
 var NUM_TEAMS_PER_GROUP = 4;
+var TORNEIG = 'mundial';
+// var TORNEIG = 'euro';
 
 function create2DArray(rows) {
     var arr = [];
@@ -93,15 +95,25 @@ function classifica(resultats, equips, tipus, equips_totals)
     var error = 0;
     // var classificats = ordena(ids_equips, resultats);
 
-    if (tipus == 'punts')
+    if (TORNEIG == 'mundial')
     {
-        var agrupa = function(objA, objB) { return objA.punts == objB.punts; };
-        var agrupats = _.groupBy(equips, 'punts');
+        // Al mundial primer s'ordena per punts, diferència i gols en tots els partits, i si hi ha empat, s'ordena per aquest mateix criteri només agafant
+        // els partits entre els equips empatats
+        var agrupa = function(objA, objB) { return objA.punts == objB.punts && objA.diferencia == objB.diferencia && objA.gols == objB.gols; };
+        var agrupats = _.groupBy(equips, function(obj){ return obj.punts+"-"+obj.diferencia+"-"+obj.gols; });
     }
     else
     {
-        var agrupa = function(objA, objB) { return objA.diferencia == objB.diferencia && objA.gols == objB.gols; };
-        var agrupats = _.groupBy(equips, function(obj){ return obj.diferencia+"-"+obj.gols; });
+        if (tipus == 'punts')
+        {
+            var agrupa = function(objA, objB) { return objA.punts == objB.punts; };
+            var agrupats = _.groupBy(equips, 'punts');
+        }
+        else
+        {
+            var agrupa = function(objA, objB) { return objA.diferencia == objB.diferencia && objA.gols == objB.gols; };
+            var agrupats = _.groupBy(equips, function(obj){ return obj.diferencia+"-"+obj.gols; });
+        }
     }
 
     if (Object.keys(agrupats).length == equips.length)
@@ -207,7 +219,7 @@ function classifica(resultats, equips, tipus, equips_totals)
     return [equips, error];
 }
 
-function actualitza()
+function actualitza_grups()
 {
     var formulari = document.getElementById("f1");
     var ids_equips = [
@@ -215,9 +227,9 @@ function actualitza()
         parseInt(formulari.elements["form-0-equip-2"].value),
         parseInt(formulari.elements["form-1-equip-1"].value),
         parseInt(formulari.elements["form-1-equip-2"].value)
-            ]
+    ]
 
-            var noms_equips = Array(25);
+    var noms_equips = Array(25);
     var banderes_equips = Array(25);
     for (var i = 0; i<ids_equips.length; i++)
     {
@@ -280,7 +292,7 @@ function actualitza()
     }
 }
 
-function actualitzaEliminatoria()
+function actualitza_eliminatoria()
 {
     var formulari = document.getElementById("f1");
     var num_partits = formulari.elements["num-partits"].value;
@@ -292,26 +304,26 @@ function actualitzaEliminatoria()
         var gols2 = "form-"+i+"-gols2";
         var form = "form-"+i+"-empat";
 
-	if (formulari.elements[gols1].value < 0 || formulari.elements[gols2].value < 0)
-	{
-            acabat = 0;
-	}
-	else if (formulari.elements[gols1].value == formulari.elements[gols2].value)
+        if (formulari.elements[gols1].value < 0 || formulari.elements[gols2].value < 0)
         {
-	    empat_seleccionat = 0;
+            acabat = 0;
+        }
+        else if (formulari.elements[gols1].value == formulari.elements[gols2].value)
+        {
+            empat_seleccionat = 0;
             for (var j=0, iLen=formulari.elements[form].length; j<iLen; j++) {
                 formulari.elements[form][j].disabled = false;
 
-		if (formulari.elements[form][j].checked)
-		{
+                if (formulari.elements[form][j].checked)
+                {
                     empat_seleccionat = 1;
-		}
+                }
             } 
 
-	    if (!empat_seleccionat)
-	    {
+            if (!empat_seleccionat)
+            {
                 acabat = 0;
-	    }
+            }
         }
         else
         {

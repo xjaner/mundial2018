@@ -11,9 +11,9 @@ from joc.utils import (
 
 class PartitForm(forms.ModelForm):
     gols1 = forms.ChoiceField(choices=GOLS_CHOICES,
-                              widget=forms.Select(attrs={"onChange": 'actualitza()'}))
+                              widget=forms.Select(attrs={"onChange": 'actualitza_grups()'}))
     gols2 = forms.ChoiceField(choices=GOLS_CHOICES,
-                              widget=forms.Select(attrs={"onChange": 'actualitza()'}))
+                              widget=forms.Select(attrs={"onChange": 'actualitza_grups()'}))
     empat = forms.ChoiceField(choices=EMPAT_CHOICES,
                               widget=forms.RadioSelect,
                               required=False)
@@ -26,12 +26,12 @@ class PartitForm(forms.ModelForm):
             self.fields['empat'].widget.attrs['disabled'] = True
 
         if instance.partit.grup.nom in FASE_GRUPS:
-            self.fields['gols1'].widget.attrs['onChange'] = 'actualitza()'
-            self.fields['gols2'].widget.attrs['onChange'] = 'actualitza()'
+            self.fields['gols1'].widget.attrs['onChange'] = 'actualitza_grups()'
+            self.fields['gols2'].widget.attrs['onChange'] = 'actualitza_grups()'
         else:
-            self.fields['gols1'].widget.attrs['onChange'] = 'actualitzaEliminatoria()'
-            self.fields['gols2'].widget.attrs['onChange'] = 'actualitzaEliminatoria()'
-            self.fields['empat'].widget.attrs['onChange'] = 'actualitzaEliminatoria()'
+            self.fields['gols1'].widget.attrs['onChange'] = 'actualitza_eliminatoria()'
+            self.fields['gols2'].widget.attrs['onChange'] = 'actualitza_eliminatoria()'
+            self.fields['empat'].widget.attrs['onChange'] = 'actualitza_eliminatoria()'
 
     class Meta:
         model = PronosticPartit
