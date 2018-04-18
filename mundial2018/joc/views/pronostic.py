@@ -113,8 +113,8 @@ def pronostic(request):
         equips_classificacio = []
         deshabilita_submit = True
         for equip in Equip.objects.filter(grup=grup):
-            equip_classificacio, _ = PronosticEquipGrup.objects.get_or_create(jugador=jugador,
-                                                                              equip=equip)
+            equip_classificacio, _obj = PronosticEquipGrup.objects.get_or_create(jugador=jugador,
+                                                                                 equip=equip)
             equips_classificacio.append(equip_classificacio)
             if equip_classificacio.posicio != 0:
                 deshabilita_submit = False

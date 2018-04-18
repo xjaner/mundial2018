@@ -8,15 +8,16 @@ from joc.models import Partit, PronosticPartit, PronosticEquipGrup, Equip
 GOLS_CHOICES = (('-1', '-'), (0, 0), (1, 1), (2, 2), (3, 3), (4, 4), (5, 5), (6, 6), (7, 7),
                 (8, 8))
 EMPAT_CHOICES = ((1, 1), (2, 2))
-GUARDA_GRUPS = set(['B', 'C', 'D', 'E', 'F', 'G'])
-FASE_GRUPS = set(['A', 'B', 'C', 'D', 'E', 'F'])
-VUITENS = set(['G'])
-QUARTS = set(['H'])
-SEMIS = set(['I'])
-FINAL = set(['J'])
-CREAR_PARTITS = set(['G', 'H', 'I', 'J'])
-COMPROVAR_TERCERS = set(['G'])
-ACABA_PRONOSTIC = set(['K'])
+GUARDA_GRUPS = set(['B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'])
+FASE_GRUPS = set(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'])
+VUITENS = set(['I'])
+QUARTS = set(['J'])
+SEMIS = set(['K'])
+TERCER_I_QUART_LOOG = set(['L'])
+FINAL = set(['M'])
+CREAR_PARTITS = set(['I', 'J', 'K', 'L', 'M'])
+COMPROVAR_TERCERS = set([])
+ACABA_PRONOSTIC = set(['M'])
 TEXT_GRUP = {
     'A': 'Grup A',
     'B': 'Grup B',
@@ -24,10 +25,13 @@ TEXT_GRUP = {
     'D': 'Grup D',
     'E': 'Grup E',
     'F': 'Grup F',
-    'G': 'Vuitens de final',
-    'H': 'Quarts de final',
-    'I': 'Semifinals',
-    'J': 'Final',
+    'G': 'Grup G',
+    'H': 'Grup H',
+    'I': 'Vuitens de final',
+    'J': 'Quarts de final',
+    'K': 'Semifinals',
+    'L': 'Tercer i Quart lloc',
+    'M': 'Final',
 }
 
 ULTIM_PARTIT_GRUPS = 36
@@ -57,7 +61,8 @@ POSICIO_TERCERS = {
 }
 
 
-def get_or_create_and_reset_pronostic_partit(id_partit, jugador, id_equip1, id_equip2, admin=False):
+def get_or_create_and_reset_pronostic_partit(id_partit, jugador, id_equip1, id_equip2,
+                                             admin=False):
     try:
         pronostic_partit = PronosticPartit.objects.get(jugador=jugador, partit_id=id_partit)
     except PronosticPartit.DoesNotExist:

@@ -3,3 +3,6 @@ django_registration_redux==2.2
 psycopg2==2.7.3.2
 pytz==2017.3
 Unipath==1.1
+
+#### apt-get packages:
+# gettext

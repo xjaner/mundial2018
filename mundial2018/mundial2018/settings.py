@@ -114,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ca'
 
 TIME_ZONE = 'UTC'
 
@@ -146,9 +146,9 @@ STATIC_ROOT = BASE_DIR.child("static")
 # STATICFILES_DIRS = (
 #     BASE_DIR.child("assets"),
 # )
-# LOCALE_PATHS = (
-#     BASE_DIR.child("languages"),
-# )
+LOCALE_PATHS = (
+    BASE_DIR.child("languages"),
+)
 
 # # django-inspectional-registration
 # DEFAULT_FROM_EMAIL = '2016eurocopa@gmail.com'
