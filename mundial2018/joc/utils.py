@@ -15,9 +15,9 @@ QUARTS = set(['J'])
 SEMIS = set(['K'])
 TERCER_I_QUART_LOOG = set(['L'])
 FINAL = set(['M'])
-CREAR_PARTITS = set(['I', 'J', 'K', 'L', 'M'])
+CREAR_PARTITS = set(['I', 'J', 'K', 'L'])
 COMPROVAR_TERCERS = set([])
-ACABA_PRONOSTIC = set(['M'])
+ACABA_PRONOSTIC = set(['N'])
 TEXT_GRUP = {
     'A': 'Grup A',
     'B': 'Grup B',
@@ -34,6 +34,7 @@ TEXT_GRUP = {
     'M': 'Final',
 }
 
+NUM_EQUIPS = 32
 ULTIM_PARTIT_GRUPS = 36
 ULTIM_PARTIT_VUITENS = 44
 ULTIM_PARTIT_QUARTS = 48
@@ -42,6 +43,38 @@ ULTIM_PARTIT_SEMIS = 50
 
 FUNCIO_ORDRE = lambda x: (x.punts, x.diferencia, x.favor)
 
+# Mundial
+EMPARELLAMENTS_VUITENS = {
+    49: ((1, 'A'), (2, 'B')),
+    50: ((1, 'C'), (2, 'D')),
+    51: ((1, 'B'), (2, 'A')),
+    52: ((1, 'D'), (2, 'C')),
+    53: ((1, 'E'), (2, 'F')),
+    54: ((1, 'G'), (2, 'H')),
+    55: ((1, 'F'), (2, 'E')),
+    56: ((1, 'H'), (2, 'G')),
+}
+
+EMPARELLAMENTS_QUARTS = {
+    57: (49, 50),
+    58: (53, 54),
+    59: (51, 52),
+    60: (55, 56),
+}
+
+EMPARELLAMENTS_SEMIS = {
+    61: (57, 58),
+    62: (59, 60),
+}
+
+EMPARELLAMENT_TERCER_I_QUART_LLOC = {
+    63: (61, 62),
+}
+EMPARELLAMENT_FINAL = {
+    64: (61, 62),
+}
+
+# Eurocopa
 POSICIO_TERCERS = {
     frozenset(['A', 'B', 'C', 'D']): {'WA': 'C', 'WB': 'D', 'WC': 'A', 'WD': 'B'},
     frozenset(['A', 'B', 'C', 'E']): {'WA': 'C', 'WB': 'A', 'WC': 'B', 'WD': 'E'},
@@ -84,110 +117,91 @@ def get_or_create_and_reset_pronostic_partit(id_partit, jugador, id_equip1, id_e
 
 
 def crea_final(request, jugador, admin=False):
-    get_or_create_and_reset_pronostic_partit(
-        51,
-        jugador,
-        PronosticPartit.objects.get(
-            jugador=jugador,
-            partit_id=49
-        ).guanyador().id,
-        PronosticPartit.objects.get(
-            jugador=jugador,
-            partit_id=50
-        ).guanyador().id,
-        admin,
-    )
+    for partit_nou, partits_anteriors in EMPARELLAMENT_FINAL.items():
+        get_or_create_and_reset_pronostic_partit(
+            partit_nou,
+            jugador,
+            PronosticPartit.objects.get(
+                jugador=jugador,
+                partit_id=partits_anteriors[0]
+            ).guanyador().id,
+            PronosticPartit.objects.get(
+                jugador=jugador,
+                partit_id=partits_anteriors[1]
+            ).guanyador().id,
+            admin,
+        )
+
+    for partit_nou, partits_anteriors in EMPARELLAMENT_TERCER_I_QUART_LLOC.items():
+        get_or_create_and_reset_pronostic_partit(
+            partit_nou,
+            jugador,
+            PronosticPartit.objects.get(
+                jugador=jugador,
+                partit_id=partits_anteriors[0]
+            ).perdedor().id,
+            PronosticPartit.objects.get(
+                jugador=jugador,
+                partit_id=partits_anteriors[1]
+            ).perdedor().id,
+            admin,
+        )
 
 
 def crea_semis(request, jugador, admin=False):
-    get_or_create_and_reset_pronostic_partit(
-        49,
-        jugador,
-        PronosticPartit.objects.get(
-            jugador=jugador,
-            partit_id=45
-        ).guanyador().id,
-        PronosticPartit.objects.get(
-            jugador=jugador,
-            partit_id=46
-        ).guanyador().id,
-        admin,
-    )
-
-    get_or_create_and_reset_pronostic_partit(
-        50,
-        jugador,
-        PronosticPartit.objects.get(
-            jugador=jugador,
-            partit_id=47
-        ).guanyador().id,
-        PronosticPartit.objects.get(
-            jugador=jugador,
-            partit_id=48
-        ).guanyador().id,
-        admin,
-    )
+    for partit_nou, partits_anteriors in EMPARELLAMENTS_SEMIS.items():
+        get_or_create_and_reset_pronostic_partit(
+            partit_nou,
+            jugador,
+            PronosticPartit.objects.get(
+                jugador=jugador,
+                partit_id=partits_anteriors[0]
+            ).guanyador().id,
+            PronosticPartit.objects.get(
+                jugador=jugador,
+                partit_id=partits_anteriors[1]
+            ).guanyador().id,
+            admin,
+        )
 
 
 def crea_quarts(request, jugador, admin=False):
-    get_or_create_and_reset_pronostic_partit(
-        45,
-        jugador,
-        PronosticPartit.objects.get(
-            jugador=jugador,
-            partit_id=37
-        ).guanyador().id,
-        PronosticPartit.objects.get(
-            jugador=jugador,
-            partit_id=39
-        ).guanyador().id,
-        admin,
-    )
-
-    get_or_create_and_reset_pronostic_partit(
-        46,
-        jugador,
-        PronosticPartit.objects.get(
-            jugador=jugador,
-            partit_id=38
-        ).guanyador().id,
-        PronosticPartit.objects.get(
-            jugador=jugador,
-            partit_id=42
-        ).guanyador().id,
-        admin,
-    )
-
-    get_or_create_and_reset_pronostic_partit(
-        47,
-        jugador,
-        PronosticPartit.objects.get(
-            jugador=jugador,
-            partit_id=41
-        ).guanyador().id,
-        PronosticPartit.objects.get(
-            jugador=jugador,
-            partit_id=43
-        ).guanyador().id,
-        admin,
-    )
-
-    get_or_create_and_reset_pronostic_partit(
-        48,
-        jugador,
-        PronosticPartit.objects.get(
-            jugador=jugador,
-            partit_id=40
-        ).guanyador().id,
-        PronosticPartit.objects.get(
-            jugador=jugador,
-            partit_id=44
-        ).guanyador().id,
-        admin,
-    )
+    for partit_nou, partits_anteriors in EMPARELLAMENTS_QUARTS.items():
+        get_or_create_and_reset_pronostic_partit(
+            partit_nou,
+            jugador,
+            PronosticPartit.objects.get(
+                jugador=jugador,
+                partit_id=partits_anteriors[0]
+            ).guanyador().id,
+            PronosticPartit.objects.get(
+                jugador=jugador,
+                partit_id=partits_anteriors[1]
+            ).guanyador().id,
+            admin,
+        )
 
 
-def crea_vuitens(request, jugador, admin=False):
+def crea_vuitens_mundial(request, jugador, admin=False):
+    for partit_id, equips in EMPARELLAMENTS_VUITENS.items():
+        get_or_create_and_reset_pronostic_partit(
+            partit_id,
+            jugador,
+            PronosticEquipGrup.objects.get(
+                jugador=jugador,
+                equip__grup__nom=equips[0][1],
+                posicio=equips[0][0],
+            ).equip.id,
+            PronosticEquipGrup.objects.get(
+                jugador=jugador,
+                equip__grup__nom=equips[1][1],
+                posicio=equips[1][0],
+            ).equip.id,
+            admin,
+        )
+
+
+def crea_vuitens_eurocopa(request, jugador, admin=False):
     tercers = PronosticEquipGrup.objects.filter(jugador=jugador,
                                                 posicio=3)
     tercers_ordenats = sorted(tercers, key=FUNCIO_ORDRE, reverse=True)[:4]
@@ -324,13 +338,13 @@ def crea_vuitens(request, jugador, admin=False):
 
 
 def crea_partits(request, jugador, nom_grup, admin=False):
-    if nom_grup == 'G':
-        crea_vuitens(request, jugador, admin)
-    elif nom_grup == 'H':
-        crea_quarts(request, jugador, admin)
-    elif nom_grup == 'I':
-        crea_semis(request, jugador, admin)
+    if nom_grup == 'I':
+        crea_vuitens_mundial(request, jugador, admin)
     elif nom_grup == 'J':
+        crea_quarts(request, jugador, admin)
+    elif nom_grup == 'K':
+        crea_semis(request, jugador, admin)
+    elif nom_grup == 'L':
         crea_final(request, jugador, admin)
 
 

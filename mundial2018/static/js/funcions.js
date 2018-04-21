@@ -15,7 +15,7 @@ function create2DArray(rows) {
 function genera_resultats(formulari)
 {
     var acabat = 1;
-    var resultats = create2DArray(25);
+    var resultats = create2DArray(37);
 
     for (var i=0; i<6; i++)
     {
@@ -229,8 +229,8 @@ function actualitza_grups()
         parseInt(formulari.elements["form-1-equip-2"].value)
     ]
 
-    var noms_equips = Array(25);
-    var banderes_equips = Array(25);
+    var noms_equips = Array(37);
+    var banderes_equips = Array(37);
     for (var i = 0; i<ids_equips.length; i++)
     {
         noms_equips[ids_equips[i]] = formulari.elements["nom-equip-"+ids_equips[i]].value
@@ -277,11 +277,6 @@ function actualitza_grups()
     formulari.elements["id2"].value = classificats[2].id;
     formulari.elements["id3"].value = classificats[3].id;
 
-    if (acabat == 1 && error == 1)
-    {
-        alert("ERROOOOR!");
-    }
-
     if (acabat == 1)
     {
         formulari.elements["seguent"].removeAttribute('disabled');
@@ -289,6 +284,11 @@ function actualitza_grups()
     else
     {
         formulari.elements["seguent"].disabled = true;
+    }
+
+    if (acabat == 1 && error == 1)
+    {
+        alert("EP! Hi ha 2 o més equips empatats a tot! Si t'agrada com ha quedat la classificació pots seguir al següent, sinó segur que canviant un resultat ja desfà l'empat.");
     }
 }
 

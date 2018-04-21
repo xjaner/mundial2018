@@ -74,11 +74,18 @@
 	width:450px;
 	height:165px;
 }
-.boto_next{
+.boto_next_classificacio{
 	float:right;
 	width:175px;
 	height:80px;
     padding-top: 95px;
+    padding-right: 75px;
+}
+.boto_next{
+	float:right;
+	width:175px;
+	height:80px;
+    padding-top: 25px;
     padding-right: 75px;
 }
 .classif input{

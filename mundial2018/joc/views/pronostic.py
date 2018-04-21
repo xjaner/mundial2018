@@ -89,7 +89,7 @@ def pronostic(request):
     try:
         seguent_grup = Grup.objects.get(id=grup.id + 1).nom
     except Grup.DoesNotExist:
-        seguent_grup = 'G'
+        seguent_grup = 'N'
 
     partits = Partit.objects.filter(grup=grup)
 

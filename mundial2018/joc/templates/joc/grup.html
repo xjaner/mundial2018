@@ -59,8 +59,10 @@
 <div id="classificacio">
 {% if equips_classificacio %}
 {% include "joc/grup_classificacio.html" %}
-{% endif %}
+<div class="boto_next_classificacio">
+{% else %}
 <div class="boto_next">
+{% endif %}
 <input name="seguent" type="submit" class="boto_index" value="Següent grup" {% if deshabilita_submit %}disabled{% endif %}>
 </div>
 </div>
