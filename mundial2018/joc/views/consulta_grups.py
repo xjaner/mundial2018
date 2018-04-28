@@ -10,7 +10,7 @@ from joc.utils import FASE_GRUPS
 @login_required
 def consulta_grups(request):
     grups = OrderedDict()
-    for grup in FASE_GRUPS:
+    for grup in sorted(FASE_GRUPS):
         grups[grup] = list(
             PronosticEquipGrup.objects.filter(jugador__usuari=request.user,
                                               equip__grup__nom=grup,

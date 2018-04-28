@@ -1,0 +1,90 @@
+#llistat
+{
+	width:600px;
+	margin:auto;
+	margin-top: 40px;
+	clear:both;
+	background-color: #dddddd;
+	font-family:Verdana;
+	font-weight:normal;
+	font-size:12px;
+}
+.titol_llistat
+{
+	background-color: black;
+	color: white;
+	text-align: center;
+	font-family:Verdana;
+	font-weight:bold;
+	font-size:12px;
+}
+.linia_usuaris
+{
+	font-family:Verdana;
+	font-weight:normal;
+	font-size:12px;
+	color:#000;
+}
+.linia_usuaris a
+{
+	font-family:Verdana;
+	font-weight:normal;
+	font-size:12px;
+	color:#000;
+	text-decoration:none;
+}
+.linia_usuaris a:hover
+{
+	text-decoration:underline;
+}
+.linia_bona
+{
+	font-family:Verdana;
+	font-weight:bold;
+	font-size:12px;
+	background-color:#cccccc;
+	color:#000;
+}
+.linia_bona a
+{
+	font-family:Verdana;
+	font-weight:bold;
+	font-size:12px;
+	background-color:#cccccc;
+	color:#000;
+	text-decoration:none;
+}
+.linia_bona a:hover
+{
+	text-decoration:underline;
+}
+.amunt
+{
+	background-image: url('img/amunt.gif');
+	background-repeat: no-repeat;
+	background-position: center;
+	text-align: center;
+	height: 16px;
+	font-weight: bold;
+	color: black;
+}
+.avall
+{
+	background-image: url('img/avall.gif');
+	background-repeat: no-repeat;
+	background-position: center;
+	text-align: center;
+	height: 16px;
+	font-weight: bold;
+	color: black;
+}
+.igual
+{
+	background-image: url('img/igual.gif');
+	background-repeat: no-repeat;
+	background-position: center;
+	text-align: center;
+	height: 16px;
+	font-weight: bold;
+	color: black;
+}
