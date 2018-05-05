@@ -15,6 +15,10 @@ class ClassificacioView(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super(ClassificacioView, self).get_context_data(**kwargs)
-        ultim_partit = Partit.objects.filter(~Q(gols1=-1)).order_by('-diaihora')[0]
-        context['ultima_actualitzacio'] = ultim_partit.diaihora + timedelta(minutes=105)
+        try:
+            ultim_partit = Partit.objects.filter(~Q(gols1=-1)).order_by('-diaihora')[0]
+        except IndexError:
+            context['ultima_actualitzacio'] = 'Encara no ha començat el Mundial!'
+        else:
+            context['ultima_actualitzacio'] = ultim_partit.diaihora + timedelta(minutes=105)
         return context
