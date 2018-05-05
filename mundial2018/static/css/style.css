@@ -206,4 +206,29 @@ color: red;
 	position:relative;
 	top:1px;
 }
+.errorlist {
+    font-size: 10px;
+    color: red;
+}
+.helptext {
+    margin: 5px;
+    color: red;
+}
 
+a.helptext span {
+    display:none;
+    width: 30em;
+    text-align: justify;
+    z-index:1;
+}
+
+a.helptext:hover span {
+    display:inline;
+    position:absolute;
+    background:#ffffff;
+    border:1px solid #cccccc;
+    color:#6c6c6c;
+}
+tr {
+    text-align: left;
+}
