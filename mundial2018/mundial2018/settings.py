@@ -173,3 +173,4 @@ EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = '/tmp/app-messages'  # change this to a proper location
 
 REGISTRATION_FORM = 'joc.forms.RegistrationFormComplete'
+SEND_ACTIVATION_EMAIL = False

@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required
 from . import views
 from .views.usuaris import UsuarisView
 from .views.consulta import ConsultaView
+
+# Només després
 from .views.classificacio import ClassificacioView
 
 app_name = 'joc'
