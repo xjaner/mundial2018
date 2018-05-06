@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-18 23:01+0000\n"
+"POT-Creation-Date: 2018-05-06 17:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,7 +54,7 @@ msgstr "Compte activat"
 #: templates/registration/activation_complete.html:8
 #: templates/registration/activation_complete_admin_pending.html:8
 msgid "Your account is now activated."
-msgstr "Hem activat el teu compte"
+msgstr "Hem validat el teu compte"
 
 #: templates/registration/activation_complete.html:10
 msgid "You can log in."
@@ -62,7 +62,8 @@ msgstr "Pots entrar."
 
 #: templates/registration/activation_complete_admin_pending.html:10
 msgid "Once a site administrator activates your account you can login."
-msgstr "Quan activem el teu compte ja podràs entrar"
+msgstr ""
+"Ara els administradors activaran (o no) el teu compte i ja podràs entrar"
 
 #: templates/registration/activation_email.html:6
 #: templates/registration/admin_approve_email.html:6
@@ -239,7 +240,7 @@ msgid ""
 "To approve this, please click the following link.\n"
 msgstr ""
 "\n"
-"Per aprovar-ho, fes click al següent enllaç.\n"
+"Per aprovar-lo, fes click al següent enllaç.\n"
 
 #: templates/registration/admin_approve_email_subject.txt:1
 msgid "Account approval on"
@@ -400,13 +401,13 @@ msgstr "Email d'activació enviat"
 
 #: templates/registration/registration_complete.html:7
 msgid "Please check your email to complete the registration process."
-msgstr "Comprova el teu correu per completar el procés de registre."
+msgstr "Gràcies per registrar-te. Si els administradors validen el teu compte, rebràs un correu aviat."
 
 #: templates/registration/registration_form.html:4
 msgid "Register for an account"
 msgstr "Registra't"
 
-#: templates/registration/registration_form.html:10
+#: templates/registration/registration_form.html:15
 #: templates/registration/resend_activation_form.html:10
 msgid "Submit"
 msgstr "Envia"
@@ -429,3 +430,12 @@ msgstr ""
 #: templates/registration/resend_activation_form.html:4
 msgid "Resend Activation Email"
 msgstr "Reenvia'm el mail d'activació"
+
+msgid "Is Active?"
+msgstr "Actiu?"
+
+msgid "Approve users"
+msgstr "Valida els usuaris"
+
+msgid "first name"
+msgstr "Nom real"

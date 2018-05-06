@@ -1,5 +1,5 @@
 Django==2.0
-django_registration_redux==2.2
+git+git://github.com/xjaner/django-registration
 psycopg2==2.7.3.2
 pytz==2017.3
 Unipath==1.1

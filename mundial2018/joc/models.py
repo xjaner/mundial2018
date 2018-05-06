@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from registration.models import RegistrationProfile
+from registration.signals import user_registered
+
 
 class Jugador(models.Model):
     usuari = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -138,3 +141,17 @@ class PronosticPartit(models.Model):
             return self.equip2 or self.partit.equip2
         else:
             return self.equip1 or self.partit.equip1
+
+
+def user_registered_callback(sender, user, request, **kwargs):
+    # We skip the user activation step
+    profile = RegistrationProfile.objects.get(user_id=user.id)
+    profile.activated = True
+    profile.save()
+
+    Jugador.objects.create(
+        usuari=user,
+        posicio=user.id,
+        posicio_anterior=user.id)
+
+user_registered.connect(user_registered_callback)
