@@ -1,0 +1,93 @@
+{% extends "joc/base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "css/estil_grup.css" %}">
+{% endblock stylesheets %}
+
+{% block scripts %}
+<script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
+<script language="Javascript">
+<!--
+function admin_actualitza()
+{
+    var formulari = document.getElementById("f1");
+    var num_partits = formulari.elements["num-partits"].value;
+
+    acabat = 1;
+    for (var i=0;i<num_partits;i++)
+    {
+        var gols1 = "form-"+i+"-gols1";
+        var gols2 = "form-"+i+"-gols2";
+        var form = "form-"+i+"-empat";
+
+	    if (formulari.elements[gols1].value == formulari.elements[gols2].value)
+        {
+            for (var j=0, iLen=formulari.elements[form].length; j<iLen; j++)
+            {
+                formulari.elements[form][j].disabled = false;
+            } 
+        }
+        else
+        {
+            for (var j=0, iLen=formulari.elements[form].length; j<iLen; j++) {
+                formulari.elements[form][j].disabled = true;
+                formulari.elements[form][j].checked = false;
+            } 
+        }
+
+    }
+}
+-->
+</script>
+{% endblock scripts %}
+
+{% block title %}Entrada dels resultats de l'Administrador{% endblock %}
+
+
+{% block content %}
+
+{% if cal_entrar_grups %}
+Abans d'entrar aquests resultats cal entrar els partits de la fase següent des de l'Admin.
+{% elif formset|length == 0 %}
+No hi ha resultats per actualitzar.
+{% else %}
+<form id="f1" name="f1" action="{% url 'joc:entrada_admin' %}" method="post">
+{% csrf_token %}
+<input type="hidden" name="num-partits" value="{{ formset|length }}">
+<div id="resultats">
+{{ formset.management_form }}
+{% for form in formset %}
+{{ form.id }}
+{% if forloop.counter0 < 2 %}
+<input type="hidden" name="nom-equip-{{ form.instance.equip1.id }}" value="{{ form.instance.equip1.nom }}">
+<input type="hidden" name="nom-equip-{{ form.instance.equip2.id }}" value="{{ form.instance.equip2.nom }}">
+<input type="hidden" name="bandera-equip-{{ form.instance.equip1.id }}" value="{% with 'banderes/'|add:form.instance.equip1.bandera as bandera1 %}{% static bandera1 %}{% endwith %}">
+<input type="hidden" name="bandera-equip-{{ form.instance.equip2.id }}" value="{% with 'banderes/'|add:form.instance.equip2.bandera as bandera2 %}{% static bandera2 %}{% endwith %}">
+{% endif %}
+{% if forloop.counter0|divisibleby:2 %}
+<div class="partits_linia">
+<div class="partit1">
+{% else %}
+<div class="partit2">
+{% endif %}
+{% include "joc/partit_admin.html" %}
+</div>
+{% if not forloop.counter0|divisibleby:2 %}
+</div>
+{% endif %}
+{% endfor %}
+</div>
+
+<div id="classificacio">
+<div class="boto_next">
+<input name="seguent" type="submit" class="boto_index" value="Actualitza">
+</div>
+</div>
+</form>
+{% endif %}
+
+{% endblock %}
+

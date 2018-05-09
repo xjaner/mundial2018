@@ -13,7 +13,7 @@ FASE_GRUPS = set(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'])
 VUITENS = set(['I'])
 QUARTS = set(['J'])
 SEMIS = set(['K'])
-TERCER_I_QUART_LOOG = set(['L'])
+CONSOLACIO = set(['L'])
 FINAL = set(['M'])
 CREAR_PARTITS = set(['I', 'J', 'K', 'L'])
 COMPROVAR_TERCERS = set([])
@@ -35,10 +35,11 @@ TEXT_GRUP = {
 }
 
 NUM_EQUIPS = 32
-ULTIM_PARTIT_GRUPS = 36
-ULTIM_PARTIT_VUITENS = 44
-ULTIM_PARTIT_QUARTS = 48
-ULTIM_PARTIT_SEMIS = 50
+ULTIM_PARTIT_GRUPS = 48
+ULTIM_PARTIT_VUITENS = 56
+ULTIM_PARTIT_QUARTS = 60
+ULTIM_PARTIT_SEMIS = 62
+ULTIM_PARTIT_CONSOLACIO = 63
 
 
 FUNCIO_ORDRE = lambda x: (x.punts, x.diferencia, x.favor)
@@ -67,7 +68,7 @@ EMPARELLAMENTS_SEMIS = {
     62: (59, 60),
 }
 
-EMPARELLAMENT_TERCER_I_QUART_LLOC = {
+EMPARELLAMENT_CONSOLACIO = {
     63: (61, 62),
 }
 EMPARELLAMENT_FINAL = {
@@ -132,7 +133,7 @@ def crea_final(request, jugador, admin=False):
             admin,
         )
 
-    for partit_nou, partits_anteriors in EMPARELLAMENT_TERCER_I_QUART_LLOC.items():
+    for partit_nou, partits_anteriors in EMPARELLAMENT_CONSOLACIO.items():
         get_or_create_and_reset_pronostic_partit(
             partit_nou,
             jugador,
