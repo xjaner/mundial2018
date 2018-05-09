@@ -5,8 +5,8 @@ RUN apt-get update && \
     pip install --upgrade pip && \
     pip3 install uwsgi
 
-ENV DJANGO_ENV=dev
-# ENV DJANGO_ENV=prod
+# ENV DJANGO_ENV=dev
+ENV DJANGO_ENV=prod
 ENV DOCKER_CONTAINER=1
 
 EXPOSE 8000
