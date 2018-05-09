@@ -22,3 +22,5 @@ Jugador.objects.create(
      posicio=user.id,
      posicio_anterior=user.id)
 
+4. Actualitzar settings
+4.1 ID_ADMIN

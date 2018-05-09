@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<table width="100%" align="center">
+    <tr><td class="dia" colspan="4"><b>{{ form.instance.diaihora }}</b> {{ form.instance.estadi.nom }} ({{ form.instance.estadi.ciutat }})</td></tr>
+<tr>
+    <td width="10%"><img src="{% with 'banderes/'|add:form.instance.equip1.bandera as bandera_equip1 %}{% static bandera_equip1 %}{% endwith %}" height="{{ height_banderes }}" width="{{ width_banderes }}" border="{{ border_banderes }}"></td> <td width="70%" class="equip">{{ form.instance.equip1.nom }}</td>
+<td width="10%">
+    {{ form.gols1 }}
+    <input type="hidden" name="{{ form.prefix|add:"-equip-1" }}" value="{{ form.instance.equip1.id }}">
+</td>
+<td width="10%">
+    {{ form.empat.0.tag }}
+</td>
+</tr>
+<tr>
+    <td width="10%"><img src="{% with 'banderes/'|add:form.instance.equip2.bandera as bandera_equip2 %}{% static bandera_equip2 %}{% endwith %}" height="{{ height_banderes }}" width="{{ width_banderes }}" border="{{ border_banderes }}"></td> <td width="70%" class="equip">{{ form.instance.equip2.nom }}</td>
+<td width="10%">
+    {{ form.gols2 }}
+    <input type="hidden" name="{{ form.prefix|add:"-equip-2" }}" value="{{ form.instance.equip2.id }}">
+</td>
+<td width="10%">
+    {{ form.empat.1.tag }}
+</td>
+</tr>
+</table>
+

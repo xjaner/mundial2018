@@ -88,3 +88,36 @@
 	font-weight: bold;
 	color: black;
 }
+.requadre
+{
+	width:600px;
+	margin:auto;
+	margin-top: 40px;
+    padding-left: 20px;
+    text-align: left;
+}
+.tauleta
+{
+    border-collapse: collapse;
+}
+.tauleta td, th
+{
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+}
+.tot
+{
+    padding-top: 10px;
+    clear: both;
+}
+.esquerra
+{
+    float: left;
+    width: 60%;
+}
+.dreta
+{
+    float: right;
+    width: 40%;
+}

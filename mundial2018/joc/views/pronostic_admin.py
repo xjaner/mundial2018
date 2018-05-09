@@ -89,7 +89,7 @@ def pronostic_admin(request):
     try:
         seguent_grup = Grup.objects.get(id=grup.id + 1).nom
     except Grup.DoesNotExist:
-        seguent_grup = 'G'
+        seguent_grup = 'N'
 
     partits = Partit.objects.filter(grup=grup)
 
@@ -105,7 +105,7 @@ def pronostic_admin(request):
         PronosticPartit.objects.get_or_create(jugador=jugador, partit=partit, **items)
 
     grup_form = GrupForm(queryset=PronosticPartit.objects.filter(
-        jugador=jugador, partit__grup__nom=grup))
+        jugador=jugador, partit__grup=grup))
 
     equips_classificacio = []
     template = 'grup.html'
