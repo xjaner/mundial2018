@@ -152,7 +152,7 @@ msgstr ""
 #: templates/registration/activation_email_subject.txt:1
 #: templates/registration/admin_approve_complete_email_subject.txt:1
 msgid "Account activation on"
-msgstr "Compte activat"
+msgstr "Compte activat a"
 
 #: templates/registration/admin_approve.html:4
 msgid "Approval Failure"
