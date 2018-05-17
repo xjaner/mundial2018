@@ -122,7 +122,11 @@ function classifica(resultats, equips, tipus, equips_totals)
     }
     else if (Object.keys(agrupats).length == 1)
     {
-        if (equips.length < NUM_TEAMS_PER_GROUP)
+        if (TORNEIG == 'mundial' && equips.length == NUM_TEAMS_PER_GROUP)
+        {
+            error = 1;
+        }
+        else if (equips.length < NUM_TEAMS_PER_GROUP)
         {
             error = 1;
         }
