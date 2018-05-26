@@ -16,14 +16,14 @@ class Jugador(models.Model):
     punts_grups = models.PositiveSmallIntegerField(default=0)
     punts_equips_encertats = models.PositiveSmallIntegerField(default=0)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.usuari.username
 
 
 class Grup(models.Model):
     nom = models.CharField(max_length=32)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.nom
 
 
@@ -32,7 +32,7 @@ class Equip(models.Model):
     bandera = models.CharField(max_length=128)
     grup = models.ForeignKey(Grup, on_delete=models.CASCADE)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.nom
 
 
@@ -68,7 +68,7 @@ class Partit(models.Model):
         else:
             return 0
 
-    def __unicode__(self):
+    def __str__(self):
         return u'[{pk}- {grup}] {equip1} - {equip2}'.format(
             pk=self.pk,
             grup=self.grup,
