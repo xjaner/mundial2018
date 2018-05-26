@@ -3,33 +3,12 @@
 
 {% block title %}{% trans "Register for an account" %}{% endblock %}
 
-{% block scripts %}
-<script language="Javascript">
-<!--
-function valida()
-{
-	if(f1.accepto.checked==false){
-		alert("Has d'acceptar les normes per poder-te registrar!");
-	}else{
-		document.f1.submit();
-	}
-}
--->
-</script>
-{% endblock %}
-
 {% block content %}
 <br>
 <form method="post" action="" name="f1">
     {% csrf_token %}
     <table align="center">
     {{ form.as_table }}
-    <tr>
-    <th/>
-    <td>
-    <input type="submit" value="{% trans 'Submit' %}" />
-    </td>
-    </tr>
     </table>
 <p></p>
 <div id="taula">
@@ -69,10 +48,8 @@ Funcionament:
 
 	-Bernat Comas, com a Director de Màrketing i Coordinador de tota la part no relacionada amb la informàtica.
 </textarea></center>
-<p></p>
-<div class="tick"><input type="checkbox" name="accepto">M'he llegit les normes i les accepto.</div>
 </div>
-<p><input type="button" onclick="valida()" value="{% trans 'Register' %}"></p>
+<p><input type="submit" value="{% trans 'Submit' %}"></p>
 </form>
 {% endblock %}
 
