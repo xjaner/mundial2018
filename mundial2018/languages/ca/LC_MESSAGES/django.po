@@ -438,4 +438,4 @@ msgid "Approve users"
 msgstr "Valida els usuaris"
 
 msgid "first name"
-msgstr "Nom real"
+msgstr "Nom i cognoms"
