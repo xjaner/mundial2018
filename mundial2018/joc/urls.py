@@ -17,7 +17,7 @@ urlpatterns = [
     path('consulta_grups', views.consulta_grups, name='consulta_grups'),
     path('consulta', login_required(ConsultaView.as_view()), name='consulta'),
     path('usuaris', login_required(UsuarisView.as_view()), name='usuaris'),
-    path(r'^puntuacions$', views.puntuacions, name='puntuacions'),
+    path('puntuacions', views.puntuacions, name='puntuacions'),
     # # Només abans
     path('pronostic', views.pronostic, name='pronostic'),
     # # Només després
