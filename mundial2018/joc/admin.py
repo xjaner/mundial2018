@@ -8,7 +8,11 @@ class PartitAdmin(admin.ModelAdmin):
 
 
 class JugadorAdmin(admin.ModelAdmin):
-    list_display = ('usuari', 'pagat')
+    list_display = ('usuari', 'pagat', 'pronostic_acabat')
+
+    def pronostic_acabat(self, obj):
+        return bool(obj.pronosticpartit_set.filter(partit_id=64))
+    pronostic_acabat.short_description = 'Pronòstic acabat?'
 
 
 admin.site.register(Equip)
