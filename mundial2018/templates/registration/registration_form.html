@@ -5,17 +5,51 @@
 
 {% block content %}
 <br>
-<form method="post" action="">
+<form method="post" action="" name="f1">
     {% csrf_token %}
     <table align="center">
     {{ form.as_table }}
-    <tr>
-    <th/>
-    <td>
-    <input type="submit" value="{% trans 'Submit' %}" />
-    </td>
-    </tr>
     </table>
+<p></p>
+<div id="taula">
+Abans de registrar-te, llegeix aquestes petites instruccions per saber el funcionament del joc (registrant-te n'acceptes la normativa):<br><br>
+<center>
+<textarea name="comentario" rows="10" cols="80" readonly="true">
+Funcionament:
+
+1.- S'ha de realitzar el pronòstic abans de la data d'inici del Mundial. Es podrà modificar sempre que es vulgui fins el dimecres 13 de juny a les 23:00, moment en què es farà la còpia de seguretat de tots els pronòstics i es bloquejarà aquesta opció. No cal que feu tot el pronòstic sencer d'una vegada: si us quedeu a mitges, es guardaran els resultats que hagueu entrat, i el pròxim cop que us connecteu us apareixeran els resultats guardats.
+
+2.- En els partits de la segona fase (a partir de vuitens), el resultat que val és el del final dels 90 minuts. Per tant, si un partit es decideix a la pròrroga o als penals, el resultat i el signe del partit serà empat.
+
+3.- Al final de cada jornada s'actualitzarà la classificació del joc. 
+
+4.- En el cas que hi hagi algun problema no previst, com ara alguna cosa que no estigués contemplada a les puntuacions o qualsevol altra cosa que surti del normal, com pot ser la desqualificació d'algun equip, s'actuarà de la següent manera:
+
+- S'exposarà el problema detectat a través del correu electrònic
+- Es proposaran possibles solucions
+- La gent tindrà oportunitat d'expressar les seves opinions al respecte
+- Els Membres Organitzadors tindran sempre l'última paraula a l'hora de decidir, encara que esperem que aquesta situació no s'arribi a donar
+
+5.- La puntuació que s'utilitzarà estarà exposada a la pàgina oficial del joc. 
+
+6.- En cas d'error informàtic, els Membres Organitzadors decidiran el que es fa. 
+
+7.- Quan comenci el Mundial es guardarà una còpia de seguretat amb tots els pronòstics dels participants.
+
+8.- Els Membres Organitzadors es reserven el dret d'expulsar algun jugador si s'observa un comportament inadequat.
+
+9.- Demanem a la gent que sigui el màxim de comprensiva i respectuosa amb els problemes o imprevistos que puguin sorgir d'ara en endavant, ja que l'objectiu del joc és tenir un al·licient per seguir el Mundial i passar-s'ho bé.
+
+10.- Els Membres Organitzadors es reserven el dret de fer qualsevol modificació sobre la Normativa.
+
+11.- Els Membres Organitzadors esmentats abans són:
+
+	-Xavier Janer, com a Tècnic Informàtic de puta mare que ha creat la pàgina i un suport informàtic que fa que aquest joc sigui possible.
+
+	-Bernat Comas, com a Director de Màrketing i Coordinador de tota la part no relacionada amb la informàtica.
+</textarea></center>
+</div>
+<p><input type="submit" value="{% trans 'Submit' %}"></p>
 </form>
 {% endblock %}
 

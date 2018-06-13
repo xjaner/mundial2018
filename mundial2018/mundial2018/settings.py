@@ -25,8 +25,6 @@ SECRET_KEY = '%hy@e+d*4ob4pgn@-gjemv39@3zef78rvnku#&ug0pw!-4!!@f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -116,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ca'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Andorra'
 
 USE_I18N = True
 
@@ -151,6 +149,7 @@ LOCALE_PATHS = (
 )
 
 # # django-inspectional-registration
+REGISTRATION_DEFAULT_FROM_EMAIL = 'El Joc del Mundial 2018 <eljocdelmundial@gmail.com>'
 # DEFAULT_FROM_EMAIL = '2016eurocopa@gmail.com'
 # REGISTRATION_REGISTRATION_EMAIL = False
 # REGISTRATION_ACTIVATION_EMAIL = False
@@ -165,12 +164,13 @@ ID_ADMIN = 1
 # http://django-registration-redux.readthedocs.io/en/latest/quickstart.html
 ACCOUNT_ACTIVATION_DAYS = 7  # One-week activation window; you may, of course, use a different vlue
 REGISTRATION_AUTO_LOGIN = True  # Automatically log the user in.
-REGISTRATION_ADMINS = [('Xavi', 'xjaner@gmail.com')]
+REGISTRATION_ADMINS = [('Xavier', 'xjaner@gmail.com')]
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/registration/login'
 
-EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-EMAIL_FILE_PATH = '/tmp/app-messages'  # change this to a proper location
+# EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+# EMAIL_FILE_PATH = '/tmp/app-messages'  # change this to a proper location
+EMAIL_HOST="172.18.0.1"
 
 REGISTRATION_FORM = 'joc.forms.RegistrationFormComplete'
 SEND_ACTIVATION_EMAIL = False

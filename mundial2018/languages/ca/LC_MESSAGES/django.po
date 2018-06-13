@@ -152,7 +152,7 @@ msgstr ""
 #: templates/registration/activation_email_subject.txt:1
 #: templates/registration/admin_approve_complete_email_subject.txt:1
 msgid "Account activation on"
-msgstr "Compte activat"
+msgstr "Compte activat a"
 
 #: templates/registration/admin_approve.html:4
 msgid "Approval Failure"
@@ -186,7 +186,7 @@ msgstr ""
 
 #: templates/registration/admin_approve_complete_email.html:14
 msgid "log in."
-msgstr "entrar."
+msgstr "entrar-hi."
 
 #: templates/registration/admin_approve_complete_email.txt:2
 msgid ""
@@ -298,7 +298,7 @@ msgstr "La teva contrasenya ha estat restaurada."
 #: templates/registration/password_reset_complete.html:9
 #, python-format
 msgid "You may now <a href=\"%(login_url)s\">log in</a>"
-msgstr "Ara pots <a href=\"%(login_url)s\">entrar</a>"
+msgstr "Ara pots <a href=\"%(login_url)s\">entrar-hi</a>"
 
 #: templates/registration/password_reset_confirm.html:10
 msgid "Confirm password reset"
@@ -438,4 +438,4 @@ msgid "Approve users"
 msgstr "Valida els usuaris"
 
 msgid "first name"
-msgstr "Nom real"
+msgstr "Nom i cognoms"

@@ -6,15 +6,15 @@ services:
     expose:
       - 5432
     volumes:
-      - /Users/xjaner/dev/data/pg_data:/var/lib/postgresql/data
-      - /Users/xjaner/dev/data/pg_backups:/pg_backups
+      - /home/xavier/dev/data/pg_data:/var/lib/postgresql/data
+      - /home/xavier/dev/data/pg_backups:/pg_backups
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
   web:
     build: .
     volumes:
-      - /Users/xjaner/dev/mundial2018/mundial2018:/opt/mundial2018
+      - /home/xavier/dev/mundial2018/mundial2018:/opt/mundial2018
     ports:
       - "8000:8000"
       - "8001:8001"
