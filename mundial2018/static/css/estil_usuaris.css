@@ -60,7 +60,7 @@
 }
 .amunt
 {
-	background-image: url('img/amunt.gif');
+	background-image: url('../img/amunt.gif');
 	background-repeat: no-repeat;
 	background-position: center;
 	text-align: center;
@@ -70,7 +70,7 @@
 }
 .avall
 {
-	background-image: url('img/avall.gif');
+	background-image: url('../img/avall.gif');
 	background-repeat: no-repeat;
 	background-position: center;
 	text-align: center;
@@ -80,7 +80,7 @@
 }
 .igual
 {
-	background-image: url('img/igual.gif');
+	background-image: url('../img/igual.gif');
 	background-repeat: no-repeat;
 	background-position: center;
 	text-align: center;
