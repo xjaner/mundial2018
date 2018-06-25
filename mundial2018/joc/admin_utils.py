@@ -159,11 +159,17 @@ def actualitza_partit_grups(partit):
             if equips_encertats == 16:
                 punts_equips_encertats += 75
 
-        jugador.punts_anterior = jugador.punts
         jugador.punts += punts_resultats + punts_grups + punts_equips_encertats
         jugador.punts_resultats += punts_resultats
         jugador.punts_grups += punts_grups
         jugador.punts_equips_encertats += punts_equips_encertats
+        jugador.save()
+
+
+def guarda_punts_anterior():
+    for jugador in Jugador.objects.filter(usuari__is_active=True).filter(
+            ~Q(usuari_id=settings.ID_ADMIN)):
+        jugador.punts_anterior = jugador.punts
         jugador.save()
 
 
@@ -207,7 +213,6 @@ def actualitza_partit_vuitens(partit):
             if equips_encertats == 8:
                 punts_equips_encertats += 75
 
-        jugador.punts_anterior = jugador.punts
         jugador.punts += punts_resultats + punts_grups + punts_equips_encertats
         jugador.punts_resultats += punts_resultats
         jugador.punts_grups += punts_grups
@@ -254,7 +259,6 @@ def actualitza_partit_quarts(partit):
             if equips_encertats == 4:
                 punts_equips_encertats += 75
 
-        jugador.punts_anterior = jugador.punts
         jugador.punts += punts_resultats + punts_grups + punts_equips_encertats
         jugador.punts_resultats += punts_resultats
         jugador.punts_grups += punts_grups
@@ -298,7 +302,6 @@ def actualitza_partit_semis(partit):
             if equips_encertats == 2:
                 punts_equips_encertats += 75
 
-        jugador.punts_anterior = jugador.punts
         jugador.punts += punts_resultats + punts_grups + punts_equips_encertats
         jugador.punts_resultats += punts_resultats
         jugador.punts_grups += punts_grups
@@ -336,7 +339,6 @@ def actualitza_partit_consolacio(partit):
         if partit.perdedor().id == pronostic.perdedor().id:
             punts_grups += 10
 
-        jugador.punts_anterior = jugador.punts
         jugador.punts += punts_resultats + punts_grups + punts_equips_encertats
         jugador.punts_resultats += punts_resultats
         jugador.punts_grups += punts_grups
@@ -374,7 +376,6 @@ def actualitza_partit_final(partit):
         if partit.perdedor().id == pronostic.perdedor().id:
             punts_grups += 25
 
-        jugador.punts_anterior = jugador.punts
         jugador.punts += punts_resultats + punts_grups + punts_equips_encertats
         jugador.punts_resultats += punts_resultats
         jugador.punts_grups += punts_grups
@@ -391,6 +392,7 @@ def actualitza_posicions():
 
 
 def actualitza_classificacio(admin_form):
+    guarda_punts_anterior()
     for form in admin_form.forms:
         if form.instance.grup.nom in FASE_GRUPS:
             actualitza_partit_grups(form.instance)
