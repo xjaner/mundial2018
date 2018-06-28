@@ -109,7 +109,7 @@ def actualitza_partit_grups(partit):
                                                                   equip__grup__nom=grup).order_by(
                                                                       'posicio')
                 equips_posicio_correcta = 0
-                for idx in xrange(settings.EQUIPS_PER_GRUP):
+                for idx in range(settings.EQUIPS_PER_GRUP):
                     if grups_admin[idx].equip_id == grups_jugador[idx].equip_id:
                         equips_posicio_correcta += 1
 
