@@ -291,6 +291,20 @@ def actualitza_partit_semis(partit):
                 punts_resultats += 10
 
         if partit.id == ULTIM_PARTIT_SEMIS:
+            # Consolació
+            equips_consolacio_admin = obte_equips_fase_admin(CONSOLACIO)
+            equips_consolacio_pronostic = obte_equips_fase_jugador(jugador, CONSOLACIO)
+
+            # Punts pel número d'equips encertats a la següent fase
+            equips_consolacio_encertats = len(
+                equips_consolacio_admin.intersection(equips_consolacio_pronostic))
+
+            if equips_consolacio_encertats == 1:
+                punts_equips_encertats += 8
+            if equips_consolacio_encertats == 2:
+                punts_equips_encertats += 20
+
+            # Final
             equips_final_admin = obte_equips_fase_admin(FINAL)
             equips_final_pronostic = obte_equips_fase_jugador(jugador, FINAL)
 
